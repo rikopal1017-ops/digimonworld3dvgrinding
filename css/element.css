@@ -57,23 +57,23 @@ td{vertical-align: top; text-align: left;}
 div.scroll {margin:0;padding:0;}
 div.scroll table{border-collapse:collapse;  border-radius: 5px;}
 div.scroll th{text-align:center;vertical-align:middle;font-family:Times; color:#ffffff;padding:1px 1px 0; background-color:#5F61FF;border:1px solid #000;}
-div.scroll td{font-family:Times; color:black; align:'right'; color:black; padding:1px 5px 1px 5px;border:1px solid #000; font-size:30px;}
+div.scroll td{font-family:Times; color:black; align:'right'; color:black; padding:1px 5px 1px 5px;border:1px solid #000;}
 
 @media screen and (max-width: 450px) {
 	/*div.scroll th{background-color:#ffee60;}*/
-	div.scroll td{font-size:6px;}
+	div.scroll td{font-size:8px;}
 }
 @media screen and (min-width: 451px) and (max-width: 900px) {
 	/*div.scroll th{background-color:#64ff60;}*/
-	div.scroll td{font-size:20px;}
+	div.scroll td{font-size:9px;}
 }
 @media screen and (min-width: 901px) and (max-width: 1199px) {
 	/*div.scroll th{background-color:#60eaff;}*/
-	div.scroll td{font-size:25px;}
+	div.scroll td{font-size:10px;}
 }
 @media screen and (min-width: 1200px) and (max-width: 1399px){
 	/*div.scroll th{background-color:#ff6060;}*/
-	div.scroll td{font-size:30px;}
+	div.scroll td{font-size:12px;}
 }
 div.scroll tr:hover{background-color:#6EC4FF;}
 div.scroll tr.nodis{background-color:#ffb3b3;}
@@ -86,73 +86,3 @@ div.scroll tr.yellow{background-color:#fffabd;}
 div.scroll tr.yellow:hover{background-color:#ffed0e;}
 
 
-.table-container {
-    width: 100%;
-    max-height: 500px; /* Batas tinggi tabel. Ubah sesuai kebutuhan (misal: 70vh) */
-    overflow: auto; /* Mengaktifkan scroll vertikal & horizontal sekaligus */
-    -webkit-overflow-scrolling: touch;
-    margin-bottom: 1rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    border: 1px solid #e5e7eb;
-  }
-
-  /* Desain Tabel Responsif */
-  .responsive-table {
-    width: 100%;
-    border-collapse: separate; /* Menggunakan separate agar position: sticky berfungsi sempurna */
-    border-spacing: 0;
-    min-width: 800px; /* Menjamin scrollbar horizontal di layar HP */
-    font-family: system-ui, -apple-system, sans-serif;
-    background-color: #ffffff;
-  }
-
-  .responsive-table th, 
-  .responsive-table td {
-    padding: 12px 16px;
-    border-bottom: 1px solid #e5e7eb;
-    white-space: nowrap;
-  }
-
-  /* Sticky Header (Header Tetap Di Atas Saat Vertical Scroll) */
-  .responsive-table th {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    background-color: #1e293b;
-    color: #ffffff;
-    font-weight: 600;
-    text-align: center;
-    cursor: pointer;
-    user-select: none;
-    transition: background-color 0.2s ease;
-  }
-
-  .responsive-table th:first-child {
-    text-align: left;
-  }
-
-  .responsive-table th:hover {
-    background-color: #334155;
-  }
-
-  .responsive-table th::after {
-    content: ' ↕';
-    font-size: 11px;
-    opacity: 0.5;
-  }
-
-  /* Zebra Striping & Hover */
-  .responsive-table tbody tr:nth-child(even) {
-    background-color: #f8fafc;
-  }
-
-  .responsive-table tbody tr:hover {
-    background-color: #f1f5f9;
-  }
-
-  .digimon-name {
-    font-size: 18px;
-    font-weight: 600;
-    color: #0f172a;
-  }

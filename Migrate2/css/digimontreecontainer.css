@@ -1,0 +1,152 @@
+/* Container Utama Diagram Pohon */
+.digimon-tree-horizontal {
+    width: 100%;
+    overflow-x: hidden; /* Menonaktifkan horizontal scrollbar */
+    padding: 20px 10px;
+    background-color: #0f172a;
+    border-radius: 8px;
+}
+
+/* Menghilangkan Bullet Default pada UL & LI */
+.digimon-tree-horizontal ul,
+.digimon-tree-horizontal li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+/* Mengatur Posisi Cabang ke Arah Kanan */
+.digimon-tree-horizontal ul {
+    display: flex;
+    flex-direction: column;
+    padding-left: 40px; /* Jarak horizontal antartingkat evolusi */
+}
+
+.digimon-tree-horizontal li {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+}
+
+/* === SISIPAN GARIS CABANG (Pohon Kiri ke Kanan) === */
+
+/* Garis Vertikal Pembagi Cabang */
+.digimon-tree-horizontal li::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 0;
+    bottom: 50%;
+    width: 0;
+    border-left: 2px solid #38bdf8;
+}
+
+/* Garis Vertikal untuk Menghubungkan ke Elemen Bawah */
+.digimon-tree-horizontal li:not(:last-child)::before {
+    bottom: -8px;
+}
+
+/* Hilangkan Garis Atas pada Anak Pertama */
+.digimon-tree-horizontal li:first-child::before {
+    top: 50%;
+}
+
+/* Hilangkan Garis Seluruhnya jika Hanya Ada 1 Anak */
+.digimon-tree-horizontal li:only-child::before {
+    display: none;
+}
+
+/* Garis Horisontal Menuju Kotak Node */
+.digimon-tree-horizontal li::after {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    width: 20px;
+    border-top: 2px solid #38bdf8;
+}
+
+.digimon-tree-horizontal li:only-child::after {
+    left: -40px;
+    width: 40px;
+}
+
+/* === DESAIN KOTAK NODE (Card Evolusi) === 
+.node-card {
+    display: flex;
+    flex-direction: column;
+    background: #1e293b;
+    border: 1px solid #38bdf8;
+    border-radius: 8px;
+    min-width: 220px;
+    max-width: 260px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 2;
+    overflow: hidden;
+    flex-shrink: 0;
+}*/
+
+/* Penyesuaian Opsional pada Node Card agar fleksibel */
+.node-card {
+    display: flex;
+    flex-direction: column;
+    background: #1e293b;
+    border: 1px solid #38bdf8;
+    border-radius: 8px;
+    min-width: 0; /* Mengubah min-width agar card bisa mengecil sesuai layar */
+    width: 100%;
+    max-width: 200px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 2;
+    overflow: hidden;
+    flex-shrink: 1; /* Diubah dari 0 menjadi 1 agar elemen bisa menyesuaikan ukuran */
+}
+
+/* Header Kotak (Nama Digimon) */
+.target-badge {
+    background: linear-gradient(135deg, #0284c7, #1d4ed8);
+    color: #ffffff;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-align: center;
+    border-bottom: 1px solid #334155;
+}
+
+.target-badge strong {
+    color: #7dd3fc;
+}
+
+/* List Syarat (Di dalam Kotak) */
+.req-box {
+    padding: 10px 12px;
+    font-size: 0.8rem;
+    color: #cbd5e1;
+    background-color: #0f172a;
+}
+
+.req-box ul {
+    padding-left: 0 !important;
+    display: block !important;
+}
+
+.req-box ul li {
+    padding: 2px 0 !important;
+    display: block !important;
+}
+
+.req-box ul li::before,
+.req-box ul li::after {
+    display: none !important; /* Mematikan garis khusus untuk list syarat internal */
+}
+
+.req-box a {
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.req-box a:hover {
+    text-decoration: underline;
+}
